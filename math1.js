@@ -16,3 +16,8 @@ console.log("the cube root of 9 is "+Math.cbrt(9));
 console.log("random value between 0 and 1 is "+Math.random());
 console.log("the random values between 0 to 100 is "+Math.floor(Math.random()*100));
 console.log("the random values between 100 and 1000 "+Math.floor(Math.random()*(1000-100+1)+100));
+
+// finding min and max 
+
+console.log("the min of "+Math.min(1,2,4,6,2,1,0.5));
+console.log("the max of "+Math.max(2,6,101,25));
