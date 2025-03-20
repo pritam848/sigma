@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+
+        }
+        button{
+            background-color: greenyellow;
+            color: black;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div textalign="center">
+         <h2></h2>
+         Enter Minimium value<input type="number" id="firstnumber" placeholder="Min Value"> <br>
+         Enter Maximum value <input type="number" id="secondnumber" placeholder="max value"><br>
+         <button onclick="getrandomvalues()">Get Random value</button>
+    </div>
+    <script>
+        function getrandomvalues()
+        {
+            let min =document.getElementById("firstnumber").value;
+            let max=document.getElementById("secondnumber").value;
+            let Random=Math.floor(Math.random()*(max-min+1)+min);
+            document.querySelector("h2").innerText=`the random value between ${min} and ${max} is ${Random}`;
+        }
+    </script>
+</body>
+</html>
