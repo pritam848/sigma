@@ -1,0 +1,113 @@
+<!--Created the Page for array manipulation-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function arrayat()
+        {
+            event.preventDefault();
+            let ind=Number(document.getElementById("index1").value);
+            let inp=document.getElementById("Arr1").value;
+            let arr=inp.split(",");
+            console.log(arr);
+            document.querySelector("h1").innerHTML=`the array element at ${ind} is ${arr[ind]} `;
+
+        }
+        function Addtoarray()
+        {
+            event.preventDefault();
+            let inp=document.getElementById("Arr1").value;
+            let arr=inp.split(",");
+            let ele=Number(document.getElementById("ele1").value);
+            arr.push(ele);
+            console.log(arr);
+            document.querySelector("h1").innerHTML=`the new  element is ${ele} and added to array  ${arr} `;
+        }
+        function Removearray()
+        {
+            event.preventDefault();
+            let inp=document.getElementById("Arr1").value;
+            let arr=inp.split(",");
+            let ele=Number(document.getElementById("ele2").value);
+            arr.pop(ele);
+            document.querySelector("h1").innerText=`the new array is${arr}`;   
+        }
+        function GetSubArrar()
+        {
+            event.preventDefault();
+            let inp=document.getElementById("Arr1").value;
+            let arr=inp.split(",");
+            let inp2=document.getElementById("ind3").value;
+            let [start1,end1]=inp2.split(",");
+            console.log(start1,end1);
+            let newarr=[];
+            for (let i =start1;i<=end1;i++)
+            {
+                newarr.push(arr[i]);
+            }
+            document.querySelector("h1").innerHTML=`the sub array is ${newarr}`;
+        }
+        function joinArray()
+        {
+            event.preventDefault();
+            let inp=document.getElementById("Arr1").value;
+            let arr=inp.split(",");
+            let inp2=document.getElementById("arr2").value;
+            let arr2=inp2.split(",");
+            console.log(arr2);
+            arr2+=arr.join(",");
+            console.log(arr2);
+        }
+        function Removefirst()
+        {
+            event.preventDefault();
+            let inp=document.getElementById("Arr1").value;
+            let arr=inp.split(",");
+            arr.shift();
+            document.querySelector("h1").innerHTML=`the new array is ${arr}`;
+        }
+        function addfirst()
+        {
+            event.preventDefault();
+            let inp=document.getElementById("Arr1").value;
+            let arr=inp.split(",");
+            let ele=Number(document.getElementById("ele3").value);
+            arr.unshift(ele);
+            document.querySelector("h1").innerHTML=`the new array is ${arr}`;
+        }
+    </script>
+</head>
+<body>
+    <form >
+        Array Manipulation <br><br><br>
+        Enter Array Elements separated by (,)&nbsp;&nbsp;<input type="text" name="Arr1" id="Arr1" placeholder="Array">
+        <br><br>
+        Select the operation you want to perform on array:
+        <br><br>
+        Find the Array Element at Particular index &nbsp; <input type="text" name="" id="index1" placeholder="index"><button onclick="arrayat()">Get Result</button>
+        <br><br>
+        Add Element to array &nbsp;&nbsp; <input type="text" id="ele1" placeholder="Enter Element" > <button onclick="Addtoarray()">Get Result</button>
+        <br><br>
+        Remove Array element &nbsp;&nbsp;<input type="text" id="ele2" placeholder="Enter Element"><button onclick="Removearray()">Get Result</button>
+        <br><br>
+        Get SubArray: &nbsp;&nbsp;<input type="text" id="ind3" placeholder="Enter Start and end index"> <button onclick="GetSubArrar()">Get Result</button>
+        <br><br>
+        Join Two array &nbsp;&nbsp;<input type="text" name="" id="arr2" placeholder="Enter second Array" > <button onclick="joinArray()">Get Result</button>
+        <br><br>
+        Remove First element: &nbsp;&nbsp; <button onclick="Removefirst()">Remove First</button>  
+        <br><br>
+        Add at first:&nbsp;&nbsp;
+        <br><br> <input type="text" name="" id="ele3" placeholder="Enter Element"><button onclick="addfirst()">Add TO array</button>
+        sort the array: &nbsp;&nbsp;
+        <br><br>
+        Check whether an element is present or not &nbsp;&nbsp;
+        <br><br>
+        Get Subbarray using Slice method: &nbsp;
+        <br><br>
+        <h1></h1>
+    </form>
+</body>
+</html>
